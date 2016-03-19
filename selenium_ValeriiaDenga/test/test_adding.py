@@ -37,7 +37,7 @@ class Tsk3(unittest.TestCase):
         driver.find_element_by_name("rating").clear()
         driver.find_element_by_name("rating").send_keys("2")
         driver.find_element_by_id("cover").clear()
-        driver.find_element_by_id("cover").send_keys("C:\\Users\\LeraJ\\Desktop\\aTJ8esL3idQ (1).jpg")
+        driver.find_element_by_id("cover").send_keys("https://github.com/lerabolkonskaia/LeraBolkonskaia/blob/93b9baf020d2645d04336ca4e6764e0439181115/aTJ8esL3idQ%20(1).jpg")
         driver.find_element_by_id("text_languages_0").clear()
         driver.find_element_by_id("text_languages_0").send_keys("French, German, English")
         driver.find_element_by_name("subtitles").clear()
@@ -49,6 +49,8 @@ class Tsk3(unittest.TestCase):
         driver.find_element_by_name("country").clear()
         driver.find_element_by_name("country").send_keys("USA")
         driver.find_element_by_id("submit").click()
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "h2"))
+        except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_link_text("Home").click()
         driver.find_element_by_css_selector("img[alt=\"Add movie\"]").click()
         driver.find_element_by_name("name").clear()
@@ -59,13 +61,7 @@ class Tsk3(unittest.TestCase):
         driver.find_element_by_name("duration").send_keys("106")
         driver.find_element_by_name("rating").clear()
         driver.find_element_by_name("rating").send_keys("3")
-        driver.find_element_by_id("submit").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [getTable | css=#updateform > table.3.1 | ]]
-        driver.find_element_by_link_text("Home").click()
-        driver.find_element_by_css_selector("img[alt=\"Cold Heart\"]").click()
-        driver.find_element_by_link_text("Remove").click()
-        self.assertRegexpMatches(self.close_alert_and_get_its_text(), r"^Are you sure you want to remove this[\s\S]$")
-    
+        driver.find_element_by_id("submit").click()        
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
         except NoSuchElementException as e: return False
