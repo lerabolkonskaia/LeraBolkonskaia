@@ -37,7 +37,7 @@ class Tsk3(unittest.TestCase):
         driver.find_element_by_name("rating").clear()
         driver.find_element_by_name("rating").send_keys("2")
         driver.find_element_by_id("cover").clear()
-        driver.find_element_by_id("cover").send_keys("https://github.com/lerabolkonskaia/LeraBolkonskaia/blob/93b9baf020d2645d04336ca4e6764e0439181115/aTJ8esL3idQ%20(1).jpg")
+        driver.find_element_by_id("cover").send_keys("https://github.com/lerabolkonskaia/LeraBolkonskaia/blob/master/selenium_ValeriiaDenga/test/aTJ8esL3idQ%20(1).jpg")
         driver.find_element_by_id("text_languages_0").clear()
         driver.find_element_by_id("text_languages_0").send_keys("French, German, English")
         driver.find_element_by_name("subtitles").clear()
